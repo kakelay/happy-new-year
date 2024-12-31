@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Timer</title>
+    <title>Countdown Timer for Nadia</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,12 +20,17 @@
             position: relative;
             z-index: 1;
             text-align: center;
-            font-size: 36px;
+            font-size: 24px;
             font-weight: bold;
+            padding: 20px;
         }
         .message {
-            font-size: 24px;
+            font-size: 18px;
             margin-top: 20px;
+        }
+        #timer {
+            font-size: 32px;
+            margin-bottom: 10px;
         }
         canvas {
             position: fixed;
@@ -46,20 +51,22 @@
 <canvas id="fireworksCanvas"></canvas>
 
 <script>
-    function countdownToNewYear() {
+    function countdownToNadia() {
         const targetTime = new Date();
-        targetTime.setHours(13, 34, 0, 0); // Set target time to 1:30 PM today
+        targetTime.setHours(18, 15, 0, 0); // Set target time to 6:07 PM today
 
-        const interval = setInterval(function() {
+        const interval = setInterval(function () {
             const currentTime = new Date();
             const timeLeft = targetTime - currentTime;
 
             if (timeLeft <= 0) {
                 clearInterval(interval);
-                document.getElementById('message').innerHTML = 
-                    "Happy New Year 2025!\n" +
-                    "To my girlfriend: You make every moment special. Wishing you endless love and happiness this year!\n" +
-                    "To my family: Thank you for your unconditional love and support. Here's to a wonderful 2025 together!";
+                document.getElementById('message').innerHTML =
+                    "Happy New Year 2025, Nadia!<br>" +
+                    "You make my world brighter and every moment special. Wishing you endless love, happiness, and joy this year!<br>" +
+                    "ฉันรักคุณนะที่รัก ❤️<br>"+
+                    "เอเลรักเธอ นาเดียตลอดไป 😘"
+                    ;
                 document.getElementById('timer').innerHTML = '';
                 startFireworks();
             } else {
@@ -133,7 +140,7 @@
         triggerRandomFireworks();
     }
 
-    countdownToNewYear();
+    countdownToNadia();
 </script>
 
 </body>
