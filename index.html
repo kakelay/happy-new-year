@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Timer for Nadia</title>
+    <title>Elay❤️Nadia</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -52,8 +52,8 @@
 
 <script>
     function countdownToNadia() {
-        const targetTime = new Date();
-        targetTime.setHours(18, 15, 0, 0); // Set target time to 6:07 PM today
+        // Set target time to midnight at the end of this year
+        const targetTime = new Date(new Date().getFullYear() + 1, 0, 1, 0, 0, 0, 0); // January 1, next year, midnight
 
         const interval = setInterval(function () {
             const currentTime = new Date();
@@ -64,17 +64,18 @@
                 document.getElementById('message').innerHTML =
                     "Happy New Year 2025, Nadia!<br>" +
                     "You make my world brighter and every moment special. Wishing you endless love, happiness, and joy this year!<br>" +
-                    "ฉันรักคุณนะที่รัก ❤️<br>"+
-                    "เอเลรักเธอ นาเดียตลอดไป 😘"
-                    ;
+                    "ฉันรักคุณนะที่รัก ❤️<br>" +
+                    "เอเลรักเธอ นาเดียตลอดไป 😘";
                 document.getElementById('timer').innerHTML = '';
                 startFireworks();
             } else {
-                const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-                document.getElementById('timer').innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+                document.getElementById('timer').innerHTML = 
+                    `${days}d ${hours}h ${minutes}m ${seconds}s`;
             }
         }, 1000);
     }
